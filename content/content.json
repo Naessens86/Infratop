@@ -1,0 +1,39 @@
+{
+  "en": {
+    "hero": {
+      "title": "The heart of your jobsite",
+      "subtitle": "Rental & sales of construction site infrastructure equipment",
+      "ctaText": "Explore Our Products"
+    },
+    "products": {
+      "title": "Our Products",
+      "items": [
+        {
+          "icon": "fa-car-battery",
+          "title": "Battery Systems",
+          "description": "Sustainable power solutions for your construction site needs"
+        },
+        {
+          "icon": "fa-lightbulb",
+          "title": "Towerlights",
+          "description": "High-performance lighting solutions for optimal visibility"
+        },
+        {
+          "icon": "fa-plug",
+          "title": "Generators",
+          "description": "Reliable power generation for continuous operations"
+        },
+        {
+          "icon": "fa-building",
+          "title": "Modular Buildings",
+          "description": "Flexible and efficient space solutions for your worksite"
+        }
+      ]
+    },
+    "about": {
+      "title": "About Us",
+      "subtitle": "Infratop, at the heart of your projects",
+      "content": "A new player that will support your projects from start to finish."
+    }
+  }
+} 

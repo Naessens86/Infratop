@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infratop CMS - Admin Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body class="admin-body">
+    <div id="login-section" class="admin-section">
+        <h1>Infratop CMS Login</h1>
+        <form id="login-form" class="admin-form">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+
+    <div id="cms-section" class="admin-section" style="display: none;">
+        <header class="admin-header">
+            <h1>Infratop CMS</h1>
+            <button id="logout-btn">Logout</button>
+        </header>
+
+        <div class="admin-content">
+            <div class="language-tabs">
+                <button class="tab-btn active" data-lang="en">English</button>
+                <button class="tab-btn" data-lang="fr">French</button>
+                <button class="tab-btn" data-lang="nl">Dutch</button>
+                <button class="tab-btn" data-lang="de">German</button>
+                <button class="tab-btn" data-lang="it">Italian</button>
+                <button class="tab-btn" data-lang="es">Spanish</button>
+            </div>
+
+            <div class="content-editor">
+                <h2>Hero Section</h2>
+                <div class="editor-group">
+                    <label>Title</label>
+                    <input type="text" id="hero-title" class="content-input">
+                    <label>Subtitle</label>
+                    <input type="text" id="hero-subtitle" class="content-input">
+                    <label>CTA Button Text</label>
+                    <input type="text" id="hero-cta" class="content-input">
+                </div>
+
+                <h2>Products Section</h2>
+                <div id="products-editor" class="editor-group">
+                    <label>Section Title</label>
+                    <input type="text" id="products-title" class="content-input">
+                    <div id="product-cards">
+                        <!-- Product cards will be dynamically added here -->
+                    </div>
+                    <button id="add-product" class="secondary-btn">Add Product</button>
+                </div>
+
+                <h2>About Section</h2>
+                <div class="editor-group">
+                    <label>Title</label>
+                    <input type="text" id="about-title" class="content-input">
+                    <label>Subtitle</label>
+                    <input type="text" id="about-subtitle" class="content-input">
+                    <label>Content</label>
+                    <textarea id="about-content" class="content-textarea" rows="6"></textarea>
+                </div>
+
+                <div class="save-section">
+                    <button id="save-content" class="primary-btn">Save Changes</button>
+                    <span id="save-status"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="admin.js"></script>
+</body>
+</html> 
