@@ -21,13 +21,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Show hero content with animation
                 const heroContent = document.querySelector('.hero-content');
                 if (heroContent) {
+                    // Reset any existing transitions
+                    heroContent.style.transition = 'none';
                     heroContent.style.opacity = '0';
                     heroContent.style.transform = 'translateY(20px)';
-                    setTimeout(() => {
-                        heroContent.style.transition = 'all 0.6s ease-out';
-                        heroContent.style.opacity = '1';
-                        heroContent.style.transform = 'translateY(0)';
-                    }, 300);
+                    
+                    // Force a reflow
+                    heroContent.offsetHeight;
+                    
+                    // Add the animation
+                    heroContent.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+                    heroContent.style.opacity = '1';
+                    heroContent.style.transform = 'translateY(0)';
                 }
             } else {
                 const target = document.querySelector(this.getAttribute('href'));
