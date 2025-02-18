@@ -11,15 +11,36 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
+            
+            // Special handling for home link
+            if (this.getAttribute('href') === '#home') {
+                window.scrollTo({
+                    top: 0,
                     behavior: 'smooth'
                 });
-                // Close mobile menu if open
-                if (window.innerWidth <= 768) {
-                    navLinks.style.display = 'none';
+                // Show hero content with animation
+                const heroContent = document.querySelector('.hero-content');
+                if (heroContent) {
+                    heroContent.style.opacity = '0';
+                    heroContent.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        heroContent.style.transition = 'all 0.6s ease-out';
+                        heroContent.style.opacity = '1';
+                        heroContent.style.transform = 'translateY(0)';
+                    }, 300);
                 }
+            } else {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            }
+            
+            // Close mobile menu if open
+            if (window.innerWidth <= 768) {
+                navLinks.style.display = 'none';
             }
         });
     });
